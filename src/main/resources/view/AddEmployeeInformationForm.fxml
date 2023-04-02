@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.AddEmployeeInformationFormController">
+   <children>
+      <Text layoutX="99.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Employee Information">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField layoutX="112.0" layoutY="229.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter Employee id" />
+      <TextField layoutX="516.0" layoutY="230.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee name" />
+      <TextField layoutX="918.0" layoutY="228.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee mobile number" />
+      <TextField layoutX="114.0" layoutY="304.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee nic" />
+      <ComboBox layoutX="115.0" layoutY="378.0" prefHeight="25.0" prefWidth="329.0" promptText="Enter your zip Enter employee emailcode" />
+      <Button layoutX="114.0" layoutY="615.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Add">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="310.0" layoutY="616.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Update">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="502.0" layoutY="616.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Delete">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="114.0" layoutY="204.0" text="Employee Id :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="517.0" layoutY="205.0" text="Employee Name :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="920.0" layoutY="202.0" text="Mobile :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="117.0" layoutY="280.0" text="Nic :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="519.0" layoutY="304.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee address" />
+      <Label layoutX="520.0" layoutY="279.0" text="Address :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="352.0" text="Email :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
