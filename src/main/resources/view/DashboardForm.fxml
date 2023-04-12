@@ -1,77 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.DashboardFormcontroller">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="787.0" layoutX="-1.0" stroke="BLACK" strokeType="INSIDE" width="142.0" />
-      <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="56.0" layoutY="277.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Vector.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="47.0" layoutY="204.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/🦆%20icon%20_home_.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="53.0" layoutY="335.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Group.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="55.0" layoutY="384.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/person_pin.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="56.0" layoutY="436.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/emoji_transportation.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="55.0" layoutY="556.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/settings.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="19.0" layoutX="60.0" layoutY="490.0">
-         <image>
-            <Image url="@../img/icon/Vector.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="45.0" layoutY="26.0">
-         <image>
-            <Image url="@../img/rent%20a%20bike/logo/white.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="70.0" layoutX="34.0" layoutY="675.0">
-         <image>
-            <Image url="@../img/rent%20a%20bike/PngItem_4042710.png" />
-         </image>
-      </ImageView>
+      <Pane prefHeight="787.0" prefWidth="142.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="37.0" layoutY="36.0">
+               <image>
+                  <Image url="@../img/rent%20a%20bike/logo/white.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="dashboardbtn" layoutX="46.0" layoutY="204.0" onAction="#btnDashboardOnAction" text="dashboard">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/🦆%20icon%20_home_.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="bookingbtn" layoutX="54.0" layoutY="277.0" onAction="#btnBookingOnAction" text="booking">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="vehiclebtn" layoutX="52.0" layoutY="335.0" onAction="#btnVehicleOnAction" text="vehicle">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Group.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="customerbtn" layoutX="52.0" layoutY="380.0" onAction="#btnCustomerOnAction" text="customer">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/person_pin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="employeebtn" layoutX="54.0" layoutY="433.0" onAction="#btnEmployeeManagementOnAction" text="employee">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="27.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/emoji_transportation.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="billingbtn" layoutX="58.0" layoutY="494.0" onAction="#btnBillingOnAction" text="billing">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="19.0">
+                     <image>
+                        <Image url="@../img/icon/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="settingbtn" layoutX="54.0" layoutY="558.0" onAction="#btnSettingOnAction" text="setting">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="logoutbtn" layoutX="34.0" layoutY="673.0" onAction="#btnLogOutOnAction" text="logout">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="70.0">
+                     <image>
+                        <Image url="@../img/rent%20a%20bike/PngItem_4042710.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
       <Text layoutX="601.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Availability  Status">
          <font>
             <Font name="Audi Type Wide Bold" size="26.0" />
          </font>
       </Text>
-      <Text layoutX="393.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
       <Text layoutX="424.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Text layoutX="434.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
          <font>
             <Font size="26.0" />
          </font>
@@ -81,17 +131,7 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="535.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
       <Text layoutX="566.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Text layoutX="576.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12">
          <font>
             <Font size="26.0" />
          </font>
@@ -101,17 +141,7 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="699.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
       <Text layoutX="730.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Text layoutX="740.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
          <font>
             <Font size="26.0" />
          </font>
@@ -121,17 +151,7 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="862.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
       <Text layoutX="892.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Text layoutX="902.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
          <font>
             <Font size="26.0" />
          </font>
@@ -141,17 +161,7 @@
             <Font size="13.0" />
          </font>
       </Text>
-      <Text layoutX="1009.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
       <Text layoutX="1033.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Text layoutX="1044.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
          <font>
             <Font size="26.0" />
          </font>
@@ -166,17 +176,7 @@
             <Font name="Audi Type Wide Bold" size="26.0" />
          </font>
       </Text>
-      <Text layoutX="686.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
       <Text layoutX="717.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Text>
-      <Text layoutX="727.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
          <font>
             <Font size="26.0" />
          </font>
@@ -184,11 +184,6 @@
       <Text layoutX="616.0" layoutY="564.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profit Overview">
          <font>
             <Font name="Audi Type Wide Bold" size="26.0" />
-         </font>
-      </Text>
-      <Text layoutX="390.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25">
-         <font>
-            <Font size="32.0" />
          </font>
       </Text>
       <Text layoutX="426.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
@@ -201,22 +196,12 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="556.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="155">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
       <Text layoutX="632.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/day">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
       <Text layoutX="609.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
-      <Text layoutX="748.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="750">
          <font>
             <Font size="32.0" />
          </font>
@@ -231,11 +216,6 @@
             <Font size="32.0" />
          </font>
       </Text>
-      <Text layoutX="931.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9150">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
       <Text layoutX="1024.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/day">
          <font>
             <Font size="16.0" />
@@ -246,5 +226,85 @@
             <Font size="32.0" />
          </font>
       </Text>
+      <Label layoutX="393.0" layoutY="143.0" text="3">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="434.0" layoutY="168.0" text="8">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="686.0" layoutY="381.0" text="3">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="390.0" layoutY="626.0" text="25">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="535.0" layoutY="143.0" text="5">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="576.0" layoutY="168.0" text="12">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="699.0" layoutY="142.0" text="4">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="740.0" layoutY="168.0" text="5">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="862.0" layoutY="142.0" text="2">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="902.0" layoutY="168.0" text="2">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="1009.0" layoutY="144.0" text="1">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="1044.0" layoutY="168.0" text="4">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="727.0" layoutY="406.0" text="8">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="624.0" text="155">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="748.0" layoutY="625.0" text="750">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="931.0" layoutY="624.0" text="9150">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

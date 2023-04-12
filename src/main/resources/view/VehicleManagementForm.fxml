@@ -35,7 +35,7 @@
             <Font name="Audi Type Wide Normal" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="1159.0" layoutY="183.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="127.0" text="Edit">
+      <Button layoutX="1159.0" layoutY="183.0" mnemonicParsing="false" onAction="#btnVehicleManagementOnAction" prefHeight="51.0" prefWidth="127.0" style="-fx-background-color: black;" text="Edit" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

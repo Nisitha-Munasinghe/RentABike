@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.CustomerInformationFormController">
    <children>
@@ -16,37 +14,30 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="120.0" layoutY="218.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter booking id" />
-      <TextField layoutX="524.0" layoutY="219.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your first name" />
-      <TextField layoutX="926.0" layoutY="217.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your last name" />
-      <TextField layoutX="122.0" layoutY="293.0" prefHeight="28.0" prefWidth="329.0" promptText="21" />
-      <ComboBox layoutX="927.0" layoutY="445.0" prefHeight="25.0" prefWidth="329.0" promptText="Enter your zip code" />
-      <Button layoutX="122.0" layoutY="604.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Add">
+      <TextField fx:id="txtCustomerId" layoutX="120.0" layoutY="218.0" onAction="#CustomerIdSearchOnAction" prefHeight="28.0" prefWidth="329.0" promptText="Enter booking id" />
+      <TextField fx:id="txtFullname" layoutX="524.0" layoutY="219.0" prefHeight="28.0" prefWidth="730.0" promptText="Enter your full name" />
+      <TextField fx:id="txtAge" layoutX="122.0" layoutY="293.0" prefHeight="28.0" prefWidth="329.0" promptText="21" />
+      <Button layoutX="122.0" layoutY="604.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="318.0" layoutY="605.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Update">
+      <Button layoutX="318.0" layoutY="605.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="510.0" layoutY="605.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Delete">
+      <Button layoutX="510.0" layoutY="605.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="122.0" layoutY="193.0" text="Booking Id : ">
+      <Label layoutX="122.0" layoutY="193.0" text="Customer Id">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="525.0" layoutY="194.0" text="First Name : ">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="928.0" layoutY="191.0" text="Last Name :">
+      <Label layoutX="525.0" layoutY="194.0" text="Full name">
          <font>
             <Font size="14.0" />
          </font>
@@ -61,35 +52,36 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="527.0" layoutY="293.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your phone number" />
+      <TextField fx:id="txtPhoneNumber" layoutX="527.0" layoutY="293.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your phone number" />
       <Label layoutX="528.0" layoutY="268.0" text="Phone number : ">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="926.0" layoutY="295.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your email address" />
+      <TextField fx:id="txtEmail" layoutX="926.0" layoutY="295.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your email address" />
       <Label layoutX="928.0" layoutY="269.0" text="Email">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="123.0" layoutY="365.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your address" />
+      <TextField fx:id="txtAddress" layoutX="123.0" layoutY="365.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your address" />
       <Label layoutX="126.0" layoutY="341.0" text="Address :">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="125.0" layoutY="444.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your city" />
+      <TextField fx:id="txtCity" layoutX="125.0" layoutY="444.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your city" />
       <Label layoutX="128.0" layoutY="420.0" text="City :">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="527.0" layoutY="444.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your country" />
+      <TextField fx:id="txtCountry" layoutX="527.0" layoutY="444.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter your country" />
       <Label layoutX="528.0" layoutY="419.0" text="Country : ">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+      <TextField fx:id="txtZipcode" layoutX="926.0" layoutY="445.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter zip code" />
    </children>
 </AnchorPane>

@@ -16,30 +16,30 @@
       </ImageView>
       <Text fill="WHITE" layoutX="57.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rent">
          <font>
-            <Font name="Audi Type Normal" size="48.0" />
+            <Font name="Sylfaen" size="48.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="58.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ride">
+      <Text fill="WHITE" layoutX="58.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ride">
          <font>
-            <Font name="Audi Type Normal" size="48.0" />
+            <Font name="Sylfaen" size="48.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="59.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Explore">
+      <Text fill="WHITE" layoutX="59.0" layoutY="455.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Explore">
          <font>
-            <Font name="Audi Type Normal" size="48.0" />
+            <Font name="Sylfaen" size="48.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="63.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Experience the city on two wheels with">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="Arial" size="27.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="61.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ease and convenience">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font name="Arial" size="27.0" />
          </font>
       </Text>
-      <Button layoutX="67.0" layoutY="602.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="135.0" text="Sign in">
+      <Button layoutX="67.0" layoutY="602.0" mnemonicParsing="false" onAction="#btnSignInOnAction" prefHeight="65.0" prefWidth="135.0" style="-fx-background-color: black;" text="Sign in" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

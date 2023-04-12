@@ -1,94 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.BookingPart1FillingController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="787.0" layoutX="-1.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" width="142.0" />
-      <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="56.0" layoutY="275.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Vector.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="47.0" layoutY="202.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/🦆%20icon%20_home_.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="53.0" layoutY="333.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Group.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="55.0" layoutY="382.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/person_pin.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="56.0" layoutY="434.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/emoji_transportation.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="55.0" layoutY="554.0">
-         <image>
-            <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/settings.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="19.0" layoutX="60.0" layoutY="488.0">
-         <image>
-            <Image url="@../img/icon/Vector.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="45.0" layoutY="24.0">
-         <image>
-            <Image url="@../img/rent%20a%20bike/logo/white.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="70.0" layoutX="34.0" layoutY="673.0">
-         <image>
-            <Image url="@../img/rent%20a%20bike/PngItem_4042710.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="235.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Your Vehicle">
+      <Text layoutX="233.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <JFXComboBox layoutX="235.0" layoutY="130.0" prefHeight="25.0" prefWidth="1017.0" promptText="Choose Bike" />
-      <JFXComboBox layoutX="235.0" layoutY="198.0" prefHeight="25.0" prefWidth="331.0" promptText="Pick-up location" />
-      <JFXComboBox layoutX="672.0" layoutY="199.0" prefHeight="25.0" prefWidth="293.0" promptText="Pick-up date" />
-      <JFXComboBox layoutX="1043.0" layoutY="206.0" prefHeight="25.0" prefWidth="207.0" promptText="12.00 pm" />
-      <JFXComboBox layoutX="235.0" layoutY="271.0" prefHeight="25.0" prefWidth="331.0" promptText="Drop-off location" />
-      <JFXComboBox layoutX="671.0" layoutY="272.0" prefHeight="25.0" prefWidth="295.0" promptText="Drop-off  date" />
-      <JFXComboBox layoutX="1042.0" layoutY="273.0" prefHeight="25.0" prefWidth="211.0" promptText="12.00 pm" />
-      <Text layoutX="233.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <TextField layoutX="236.0" layoutY="438.0" prefHeight="28.0" prefWidth="239.0" promptText="First Name" />
-      <TextField layoutX="569.0" layoutY="436.0" prefHeight="28.0" prefWidth="309.0" promptText="Last Name" />
-      <TextField layoutX="967.0" layoutY="437.0" prefHeight="28.0" prefWidth="283.0" promptText="age" />
-      <TextField layoutX="236.0" layoutY="498.0" prefHeight="28.0" prefWidth="239.0" promptText="Phone number" />
-      <TextField layoutX="572.0" layoutY="495.0" prefHeight="28.0" prefWidth="305.0" promptText="Email" />
-      <TextField layoutX="238.0" layoutY="558.0" prefHeight="28.0" prefWidth="239.0" promptText="Address" />
-      <TextField layoutX="237.0" layoutY="618.0" prefHeight="28.0" prefWidth="239.0" promptText="City" />
-      <TextField layoutX="575.0" layoutY="617.0" prefHeight="28.0" prefWidth="301.0" promptText="Country" />
-      <TextField layoutX="973.0" layoutY="616.0" prefHeight="28.0" prefWidth="278.0" promptText="Zip Code" />
-      <Button layoutX="1090.0" layoutY="671.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Book Now">
+      <TextField fx:id="txtFullName" layoutX="569.0" layoutY="113.0" prefHeight="28.0" prefWidth="688.0" promptText="Full Name" />
+      <TextField fx:id="txtAge" layoutX="238.0" layoutY="171.0" prefHeight="28.0" prefWidth="239.0" promptText="Age" />
+      <TextField fx:id="txtPhoneNumber" layoutX="570.0" layoutY="173.0" prefHeight="28.0" prefWidth="309.0" promptText="Phone number" />
+      <TextField fx:id="txtEmail" layoutX="973.0" layoutY="170.0" prefHeight="28.0" prefWidth="283.0" promptText="Email" />
+      <TextField fx:id="txtAddress" layoutX="238.0" layoutY="233.0" prefHeight="28.0" prefWidth="239.0" promptText="Address" />
+      <TextField fx:id="txtCity" layoutX="237.0" layoutY="293.0" prefHeight="28.0" prefWidth="239.0" promptText="City" />
+      <TextField fx:id="txtCountry" layoutX="573.0" layoutY="292.0" prefHeight="28.0" prefWidth="309.0" promptText="Country" />
+      <TextField fx:id="txtZipCode" layoutX="973.0" layoutY="291.0" prefHeight="28.0" prefWidth="278.0" promptText="Zip Code" />
+      <Button layoutX="1099.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Save" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button layoutX="1193.0" layoutY="31.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="126.0" text="Manage">
+      <Button fx:id="BookingManagePagebtn" layoutX="1193.0" layoutY="31.0" mnemonicParsing="false" onAction="#btnBookingManagePageOnAction" prefHeight="43.0" prefWidth="126.0" style="-fx-background-color: black;" text="Manage" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Pane prefHeight="787.0" prefWidth="142.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="37.0" layoutY="36.0">
+               <image>
+                  <Image url="@../img/rent%20a%20bike/logo/white.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="dashboardbtn" layoutX="46.0" layoutY="204.0" onAction="#btnDashboardOnAction" text="dashboard">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/🦆%20icon%20_home_.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="bookingbtn" layoutX="54.0" layoutY="277.0" onAction="#btnBookingOnAction" text="booking">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="vehiclebtn" layoutX="52.0" layoutY="335.0" onAction="#btnVehicleOnAction" text="vehicle">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Group.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="customerbtn" layoutX="52.0" layoutY="380.0" onAction="#btnCustomerOnAction" text="customer">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/person_pin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="employeebtn" layoutX="54.0" layoutY="433.0" onAction="#btnEmployeeManagementOnAction" text="employee">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="27.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/emoji_transportation.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="billingbtn" layoutX="58.0" layoutY="494.0" onAction="#btnBillingOnAction" text="billing">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="19.0">
+                     <image>
+                        <Image url="@../img/icon/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="settingbtn" layoutX="54.0" layoutY="558.0" onAction="#btnSettingOnAction" text="setting">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="logoutbtn" layoutX="34.0" layoutY="673.0" onAction="#btnLogOutOnAction" text="logout">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="70.0">
+                     <image>
+                        <Image url="@../img/rent%20a%20bike/PngItem_4042710.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <TextField fx:id="txtCustomerId" layoutX="237.0" layoutY="113.0" prefHeight="28.0" prefWidth="239.0" promptText="Customer Id" />
+      <Text layoutX="237.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Your Vehicle">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbChooseBike" layoutX="237.0" layoutY="487.0" prefHeight="25.0" prefWidth="1017.0" promptText="Choose Bike" />
+      <JFXComboBox fx:id="cmbPickUpLocation" layoutX="237.0" layoutY="555.0" prefHeight="25.0" prefWidth="331.0" promptText="Pick-up location" />
+      <JFXComboBox fx:id="cmbPickUpTime" layoutX="1045.0" layoutY="563.0" prefHeight="25.0" prefWidth="207.0" promptText="12.00 pm" />
+      <JFXComboBox fx:id="cmbDropOffLocation" layoutX="237.0" layoutY="628.0" prefHeight="25.0" prefWidth="331.0" promptText="Drop-off location" />
+      <JFXComboBox fx:id="cmbDropOffTime" layoutX="1044.0" layoutY="630.0" prefHeight="25.0" prefWidth="211.0" promptText="12.00 pm" />
+      <DatePicker fx:id="dtpkPickUpLocation" layoutX="672.0" layoutY="557.0" prefHeight="25.0" prefWidth="293.0" />
+      <DatePicker fx:id="dtpkDropOffLocation" layoutX="674.0" layoutY="630.0" prefHeight="25.0" prefWidth="293.0" />
+      <TextField fx:id="txtBookingId" layoutX="235.0" layoutY="437.0" prefHeight="28.0" prefWidth="239.0" promptText="Booking Id" />
+      <Button layoutX="1103.0" layoutY="680.0" mnemonicParsing="false" onAction="#btnBooknowOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Book Now" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

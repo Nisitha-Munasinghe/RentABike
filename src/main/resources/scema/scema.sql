@@ -6,14 +6,13 @@ DROP TABLE IF EXISTS Customer;
 CREATE TABLE IF NOT EXISTS Customer (
                                         customerId VARCHAR(15) NOT NULL,
                                         name VARCHAR(50),
-                                        address VARCHAR(100),
+                                        age INT,
                                         contact VARCHAR(20),
                                         email VARCHAR(50),
-                                        age INT,
-                                        dob DATE,
-                                        country VARCHAR(50),
+                                        address VARCHAR(100),
                                         city VARCHAR(50),
-                                        zip_code VARCHAR(10),
+                                        country VARCHAR(50),
+                                        zip_code VARCHAR(20),
                                         CONSTRAINT PRIMARY KEY (customerId)
 );
 
@@ -22,21 +21,24 @@ CREATE TABLE IF NOT EXISTS Booking (
                                        bookingId VARCHAR(15) NOT NULL,
                                        chooseBike VARCHAR(50),
                                        PickUpLocation VARCHAR(100),
-                                       dropOffLocation VARCHAR(100),
                                        pickUpDate DATE,
+                                       pickUpTime VARCHAR(10),
+                                       dropOffLocation VARCHAR(100),
                                        dropOffDate DATE,
-                                       accessories VARCHAR(100),
+                                       dropOffTime VARCHAR(10),
                                        cid VARCHAR(15),
                                        CONSTRAINT PRIMARY KEY (bookingId),
                                        CONSTRAINT FOREIGN KEY(cId) REFERENCES Customer(customerId) on Delete Cascade on Update Cascade
 );
+
+
 
 DROP TABLE IF EXISTS Payment;
 CREATE TABLE IF NOT EXISTS Payment (
                                        payId VARCHAR(15) NOT NULL,
                                        payAmount DOUBLE,
                                        payDescription VARCHAR(100),
-                                       payDate DATE,
+                                       payDate VARCHAR(15),
                                        cId VARCHAR(15),
                                        bId VARCHAR(15),
                                        CONSTRAINT PRIMARY KEY (payId),
@@ -83,7 +85,6 @@ CREATE TABLE IF NOT EXISTS VehicleRoute (
 
 CREATE TABLE User (
                       user_name VARCHAR(50) NOT NULL,
-                      employeeTyped VARCHAR(50),
                       password VARCHAR(50) NOT NULL,
                       CONSTRAINT PRIMARY KEY (user_name)
 );
@@ -96,7 +97,6 @@ CREATE TABLE Employee (
                           address VARCHAR(100),
                           contact VARCHAR(20),
                           email VARCHAR(50),
-                          mobileNumber VARCHAR(20),
                           CONSTRAINT PRIMARY KEY (employeeId)
 );
 
@@ -113,7 +113,7 @@ CREATE TABLE Salaries (
 CREATE TABLE Attendance (
                             attendenceId VARCHAR(50),
                             date DATE,
-                            holiday BOOLEAN,
+                            holiday VARCHAR(50),
                             signInTime TIME,
                             signOutTime TIME,
                             employeeId VARCHAR(50),
@@ -122,28 +122,30 @@ CREATE TABLE Attendance (
 );
 
 
-INSERT INTO Customer VALUES('C001', 'John Doe','123 Main St','+94754789723','Danapala@gmail.com', 30 , '1993-01-01' , 'USA' , 'New York', '10001');
-INSERT INTO Customer VALUES('c002', 'Jane Smith', '456 Oak St', '555-5678', 'janesmith@email.com', 25, '1998-05-15', 'USA', 'Los Angeles', '90001');
-INSERT INTO Customer VALUES('c003', 'Bob Johnson', '789 Elm St', '555-2468', 'bob@example.com', 41, '1981-02-28', 'Canada', 'Toronto', 'M5H 2N2');
-INSERT INTO Customer VALUES('c004', 'Alice Wong', '321 Pine St', '555-1357', 'alice@example.com', 29, '1993-11-22', 'Canada', 'Vancouver', 'V6B 1E1');
-INSERT INTO Customer VALUES('c005', 'Tom Wilson', '654 Birch St', '555-3698', 'tom@example.com', 24, '1998-07-03', 'USA', 'Chicago', '60601');
-INSERT INTO Customer VALUES('c006', 'Samantha Lee', '987 Cedar St', '555-7890', 'samantha@example.com', 33, '1989-12-18', 'Canada', 'Montreal', 'H2X 1Y9');
-INSERT INTO Customer VALUES('c007', 'David Kim', '234 Maple St', '555-2345', 'david@example.com', 30, '1991-08-12', 'USA', 'San Francisco', '94102');
-INSERT INTO Customer VALUES('c008', 'Emily Chen', '567 Walnut St', '555-8901', 'emily@example.com', 26, '1996-03-29', 'Canada', 'Calgary', 'T2P 1G1');
-INSERT INTO Customer VALUES('c009', 'Michael Brown', '890 Oak St', '555-4815', 'michael@example.com', 38, '1984-10-17', 'USA', 'Houston', '77002');
-INSERT INTO Customer VALUES('c010', 'Karen Jones', '432 Elm St', '555-2580', 'karen@example.com', 31, '1990-06-08', 'USA', 'Miami', '33131');
+INSERT INTO Customer VALUES('C001', 'John Doe', 28 ,'+94754789723','Danapala@gmail.com','123 Main St', 'New York', 'USA' , '10001');
+INSERT INTO Customer VALUES('C002', 'Jane Smith', 35, '+44789562341', 'jane.smith@example.com', '456 Elm St', 'London', 'UK', '8006');
+INSERT INTO Customer VALUES('C003', 'Robert Johnson', 42, '+16175551212', 'robert.johnson@example.com', '789 Maple Ave', 'Chicago', 'USA', '60611');
+INSERT INTO Customer VALUES('C004', 'Maria Garcia', 29, '+34917654321', 'maria.garcia@example.com', '10 Calle de Alcala', 'Madrid', 'Spain', '28001');
+INSERT INTO Customer VALUES('C005', 'Jens Schmidt', 46, '+49123456789', 'jens.schmidt@example.com', '321 Rosenstrasse', 'Berlin', 'Germany', '10115');
+INSERT INTO Customer VALUES('C006', 'Yuji Tanaka', 31, '+81345678901', 'yuji.tanaka@example.com', '456 Shibuya Crossing', 'Tokyo', 'Japan', '0002');
+INSERT INTO Customer VALUES('C007', 'Sophie Dubois', 25, '+33123456789', 'sophie.dubois@example.com', '789 Rue de Rivoli', 'Paris', 'France', '75001');
+INSERT INTO Customer VALUES('C008', 'Miguel Rodriguez', 36, '+5215555555555', 'miguel.rodriguez@example.com', '123 Av. Reforma', 'Mexico City', 'Mexico', '06600');
+INSERT INTO Customer VALUES('C009', 'Anastasia Ivanova', 27, '+74951234567', 'anastasia.ivanova@example.com', '456 Nevsky Prospekt', 'St. Petersburg', 'Russia', '191023');
+INSERT INTO Customer VALUES('C010', 'Kim Min-Jae', 33, '+8221234567', 'kim.minjae@example.com', '789 Gangnam-gu', 'Seoul', 'South Korea', '06001');
+INSERT INTO Customer VALUES('C011', 'Lucas Silva', 30, '+5511999999999', 'lucas.silva@example.com', '123 Avenida Paulista', 'Sao Paulo', 'Brazil', '01310');
 
 
-INSERT INTO Booking VALUES('b001', 'Mountain Bike', '123 Main St', '456 Oak Ave', '2023-04-01', '2023-04-03', 'POWER BANK', 'c001');
-INSERT INTO Booking VALUES('b002', 'Road Bike', '789 Elm St', '321 Pine Ave', '2023-04-05', '2023-04-07', 'Water Bottle', 'c002');
-INSERT INTO Booking VALUES('b003', 'Hybrid Bike', '456 Oak Ave', '123 Main St', '2023-04-12', '2023-04-15', 'POWER BANK', 'c003');
-INSERT INTO Booking VALUES('b004', 'Mountain Bike', '321 Pine Ave', '789 Elm St', '2023-04-20', '2023-04-23', 'POCKET WIFI 4G', 'c004');
-INSERT INTO Booking VALUES('b005', 'Road Bike', '123 Main St', '456 Oak Ave', '2023-04-27', '2023-04-29', 'POCKET WIFI 4G', 'c005');
-INSERT INTO Booking VALUES('b006', 'Hybrid Bike', '789 Elm St', '321 Pine Ave', '2023-05-04', '2023-05-07', 'Lock', 'c006');
-INSERT INTO Booking VALUES('b007', 'Mountain Bike', '456 Oak Ave', '123 Main St', '2023-05-11', '2023-05-14', 'Helmet, POWER BANK', 'c007');
-INSERT INTO Booking VALUES('b008', 'Road Bike', '321 Pine Ave', '789 Elm St', '2023-05-18', '2023-05-21', 'Helmet', 'c008');
-INSERT INTO Booking VALUES('b009', 'Hybrid Bike', '123 Main St', '456 Oak Ave', '2023-05-25', '2023-05-27', 'Water Bottle', 'c009');
-INSERT INTO Booking VALUES('b010', 'Mountain Bike', '789 Elm St', '321 Pine Ave', '2023-06-01', '2023-06-03', 'RAINCOAT,  POWER BANK', 'c010');
+
+INSERT INTO Booking VALUES('b001', 'Mountain Bike', 'Nugegoda', '2023-04-01','11.23', 'Nugegoda', '2023-04-03','20.54', 'c001');
+INSERT INTO Booking VALUES('b002', 'City Bike', 'Colombo 07', '2023-04-06', '09.30', 'Colombo 03', '2023-04-07', '17.45', 'c002');
+INSERT INTO Booking VALUES('b003', 'Mountain Bike', 'Kandy', '2023-04-08', '14.00', 'Kandy', '2023-04-10', '18.30', 'c003');
+INSERT INTO Booking VALUES('b004', 'Electric Bike', 'Negombo', '2023-04-11', '10.15', 'Negombo', '2023-04-13', '19.00', 'c004');
+INSERT INTO Booking VALUES('b005', 'City Bike', 'Galle', '2023-04-15', '11.45', 'Galle', '2023-04-16', '16.30', 'c005');
+INSERT INTO Booking VALUES('b006', 'Mountain Bike', 'Nuwara Eliya', '2023-04-19', '08.00', 'Nuwara Eliya', '2023-04-21', '12.15', 'c006');
+INSERT INTO Booking VALUES('b007', 'Electric Bike', 'Matara', '2023-04-23', '13.30', 'Matara', '2023-04-25', '16.45', 'c007');
+INSERT INTO Booking VALUES('b008', 'City Bike', 'Anuradhapura', '2023-04-27', '10.00', 'Anuradhapura', '2023-04-28', '15.15', 'c008');
+INSERT INTO Booking VALUES('b009', 'Mountain Bike', 'Polonnaruwa', '2023-05-01', '12.45', 'Polonnaruwa', '2023-05-03', '19.30', 'c009');
+INSERT INTO Booking VALUES('b010', 'Electric Bike', 'Trincomalee', '2023-05-05', '09.00', 'Trincomalee', '2023-05-06', '13.45', 'c010');
 
 INSERT INTO Payment VALUES('p001', 4100.50, 'Deposit payment for booking #1', '2023-04-01', 'c001', 'b001');
 INSERT INTO Payment VALUES('p002', 3375.00, 'Full payment for booking #2', '2023-05-15', 'c002', 'b002');
@@ -189,35 +191,35 @@ INSERT INTO VehicleRoute VALUES('VR008', 'V008', 'Royal Enfield', '2023-04-08', 
 INSERT INTO VehicleRoute VALUES('VR009', 'V009', 'Suzuki Hayabusa', '2023-04-09', '18:00:00');
 INSERT INTO VehicleRoute VALUES('VR010', 'V010', 'Harley Davidson', '2023-04-10', '17:30:00');
 
-INSERT INTO User VALUES('Chathura Bashitha','receptionist', 'letmeIn');
-INSERT INTO User VALUES('Dilshan Fernando','manager' ,'secret123');
+INSERT INTO User VALUES('Chathura Bashitha', 'letmeIn');
+INSERT INTO User VALUES('Dilshan Fernando','secret123');
 
-INSERT INTO Employee VALUES('ep001','receptionist','Chathura Perera' , '946101273V', 'No. 123, Galle Road, Colombo', '0112345678', 'chathura@gmail.com', '0771234567');
-INSERT INTO Employee VALUES('ep002', 'mechanic' ,'Nimasha Silva' , '947691234V', 'No. 456, Kandy Road, Kadawatha', '0113456789', 'nimasha@yahoo.com', '0762345678');
+INSERT INTO Employee VALUES('ep001','receptionist','Chathura Perera' , '946101273V', 'No. 123, Galle Road, Colombo', '0112345678', 'chathura@gmail.com');
+INSERT INTO Employee VALUES('ep002', 'mechanic' ,'Nimasha Silva' , '947691234V', 'No. 456, Kandy Road, Kadawatha', '0113456789', 'nimasha@yahoo.com');
 
 INSERT INTO Salaries VALUES('sl001','Monthly Salary', 75000.00, 'Basic', 'ep001');
 INSERT INTO Salaries VALUES('sl002','Monthly Salary', 65000.00, 'Basic', 'ep002');
 
-INSERT INTO Attendance VALUES('at001','2023-03-01', true, '08:30:00', '17:00:00', 'ep001');
-INSERT INTO Attendance VALUES('at002','2023-03-01', true, '08:30:00', '17:00:00', 'ep002');
-INSERT INTO Attendance VALUES('at003','2023-03-02', true, '08:45:00', '17:15:00', 'ep001');
-INSERT INTO Attendance VALUES('at004','2023-03-02', true, '08:45:00', '17:15:00', 'ep002');
-INSERT INTO Attendance VALUES('at005','2023-03-03', true, '08:15:00', '17:30:00', 'ep001');
-INSERT INTO Attendance VALUES('at006','2023-03-03', true, '08:15:00', '17:30:00', 'ep002');
-INSERT INTO Attendance VALUES('at007','2023-03-04', true, '08:00:00', '17:00:00', 'ep001');
-INSERT INTO Attendance VALUES('at008','2023-03-04', true, '08:00:00', '17:00:00', 'ep002');
-INSERT INTO Attendance VALUES('at009','2023-03-05', true, '08:30:00', '17:00:00', 'ep001');
-INSERT INTO Attendance VALUES('at010','2023-03-05', true, '08:30:00', '17:00:00', 'ep002');
-INSERT INTO Attendance VALUES('at011','2023-03-06', false, NULL, NULL, 'ep001');
-INSERT INTO Attendance VALUES('at012','2023-03-06', false, NULL, NULL, 'ep002');
-INSERT INTO Attendance VALUES('at013','2023-03-07', true, '08:15:00', '17:30:00', 'ep001');
-INSERT INTO Attendance VALUES('at014','2023-03-07', true, '08:15:00', '17:30:00', 'ep002');
-INSERT INTO Attendance VALUES('at015','2023-03-08', true, '09:00:00', '17:00:00', 'ep001');
-INSERT INTO Attendance VALUES('at016','2023-03-08', true, '09:00:00', '17:00:00', 'ep002');
-INSERT INTO Attendance VALUES('at017','2023-03-09', true, '08:30:00', '17:00:00', 'ep001');
-INSERT INTO Attendance VALUES('at018','2023-03-09', true, '08:30:00', '17:00:00', 'ep002');
-INSERT INTO Attendance VALUES('at019','2023-03-10', true, '08:00:00', '17:00:00', 'ep001');
-INSERT INTO Attendance VALUES('at020','2023-03-10', true, '08:00:00', '17:00:00', 'ep002');
+INSERT INTO Attendance VALUES('at001','2023-03-01', 'workday', '08:30:00', '17:00:00', 'ep001');
+INSERT INTO Attendance VALUES('at002','2023-03-01', 'workday', '08:30:00', '17:00:00', 'ep002');
+INSERT INTO Attendance VALUES('at003','2023-03-02', 'workday', '08:45:00', '17:15:00', 'ep001');
+INSERT INTO Attendance VALUES('at004','2023-03-02', 'workday', '08:45:00', '17:15:00', 'ep002');
+INSERT INTO Attendance VALUES('at005','2023-03-03', 'workday', '08:15:00', '17:30:00', 'ep001');
+INSERT INTO Attendance VALUES('at006','2023-03-03', 'workday', '08:15:00', '17:30:00', 'ep002');
+INSERT INTO Attendance VALUES('at007','2023-03-04', 'workday', '08:00:00', '17:00:00', 'ep001');
+INSERT INTO Attendance VALUES('at008','2023-03-04', 'workday', '08:00:00', '17:00:00', 'ep002');
+INSERT INTO Attendance VALUES('at009','2023-03-05', 'workday', '08:30:00', '17:00:00', 'ep001');
+INSERT INTO Attendance VALUES('at010','2023-03-05', 'workday', '08:30:00', '17:00:00', 'ep002');
+INSERT INTO Attendance VALUES('at011','2023-03-06', 'holiday', NULL, NULL, 'ep001');
+INSERT INTO Attendance VALUES('at012','2023-03-06', 'holiday', NULL, NULL, 'ep002');
+INSERT INTO Attendance VALUES('at013','2023-03-07', 'workday', '08:15:00', '17:30:00', 'ep001');
+INSERT INTO Attendance VALUES('at014','2023-03-07', 'workday', '08:15:00', '17:30:00', 'ep002');
+INSERT INTO Attendance VALUES('at015','2023-03-08', 'workday', '09:00:00', '17:00:00', 'ep001');
+INSERT INTO Attendance VALUES('at016','2023-03-08', 'workday', '09:00:00', '17:00:00', 'ep002');
+INSERT INTO Attendance VALUES('at017','2023-03-09', 'workday', '08:30:00', '17:00:00', 'ep001');
+INSERT INTO Attendance VALUES('at018','2023-03-09', 'workday', '08:30:00', '17:00:00', 'ep002');
+INSERT INTO Attendance VALUES('at019','2023-03-10', 'workday', '08:00:00', '17:00:00', 'ep001');
+INSERT INTO Attendance VALUES('at020','2023-03-10', 'workday', '08:00:00', '17:00:00', 'ep002');
 
 
 

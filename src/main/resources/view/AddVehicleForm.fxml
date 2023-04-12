@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.AddVehicleFormController">
    <children>
       <Text layoutX="97.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Vehicle Information">
@@ -25,17 +24,17 @@
       <ComboBox layoutX="111.0" layoutY="434.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
       <ComboBox layoutX="513.0" layoutY="435.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
       <ComboBox layoutX="917.0" layoutY="435.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
-      <Button layoutX="112.0" layoutY="594.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Add">
+      <Button layoutX="112.0" layoutY="594.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="308.0" layoutY="595.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Update">
+      <Button layoutX="308.0" layoutY="595.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="500.0" layoutY="595.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" text="Delete">
+      <Button layoutX="500.0" layoutY="595.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

@@ -1,52 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.EmployeeManagementFormController">
    <children>
-      <TableView layoutX="75.0" layoutY="304.0" prefHeight="400.0" prefWidth="1204.0">
+      <TableView fx:id="tblEmployee" layoutX="183.0" layoutY="307.0" prefHeight="400.0" prefWidth="1138.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="employeeId" />
-            <TableColumn prefWidth="145.0" text="employeeTyped" />
-            <TableColumn prefWidth="157.0" text="name" />
-            <TableColumn minWidth="0.0" prefWidth="119.0" text="nic" />
-            <TableColumn prefWidth="146.0" text="address" />
-            <TableColumn minWidth="0.0" prefWidth="160.0" text="contact" />
-            <TableColumn prefWidth="203.0" text="email" />
-            <TableColumn prefWidth="198.0" text="mobileNumber" />
+            <TableColumn fx:id="colEmployeeId" prefWidth="109.0" text="employeeId" />
+            <TableColumn fx:id="colEmployeeTyped" prefWidth="135.0" text="employeeTyped" />
+            <TableColumn fx:id="colName" prefWidth="155.0" text="name" />
+            <TableColumn fx:id="colNic" minWidth="0.0" prefWidth="173.0" text="nic" />
+            <TableColumn fx:id="colAddress" prefWidth="222.0" text="address" />
+            <TableColumn fx:id="colContact" minWidth="0.0" prefWidth="156.0" text="contact" />
+            <TableColumn fx:id="colEmail" prefWidth="187.0" text="email" />
          </columns>
       </TableView>
-      <Text layoutX="78.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Management">
+      <Text layoutX="181.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Management">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="749.0" layoutY="209.0" prefHeight="38.0" prefWidth="174.0" />
-      <Text layoutX="664.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="search :">
+      <TextField layoutX="765.0" layoutY="209.0" prefHeight="38.0" prefWidth="174.0" />
+      <Text layoutX="680.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="search :">
          <font>
             <Font name="Audi Type Wide Normal" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="940.0" layoutY="203.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="333.0" text="Edit">
+      <Button layoutX="984.0" layoutY="203.0" mnemonicParsing="false" onAction="#btnAddEmployeeInformationOnAction" prefHeight="51.0" prefWidth="333.0" style="-fx-background-color: black;" text="Edit" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="941.0" layoutY="127.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="333.0" text="Salary Management">
+      <Button layoutX="985.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnSalaryManagementOnAction" prefHeight="51.0" prefWidth="333.0" style="-fx-background-color: black;" text="Salary Management" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="941.0" layoutY="52.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="333.0" text="Attendence Management">
+      <Button layoutX="985.0" layoutY="52.0" mnemonicParsing="false" onAction="#btnAttendenceManagementOnAction" prefHeight="51.0" prefWidth="333.0" style="-fx-background-color: black;" text="Attendence Management" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
+      <Pane prefHeight="787.0" prefWidth="142.0" style="-fx-background-color: #000000;">
+         <children>
+            <ImageView fitHeight="57.0" fitWidth="54.0" layoutX="37.0" layoutY="36.0">
+               <image>
+                  <Image url="@../img/rent%20a%20bike/logo/white.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="dashboardbtn" layoutX="46.0" layoutY="204.0" onAction="#btnDashboardOnAction" text="dashboard">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/🦆%20icon%20_home_.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="bookingbtn" layoutX="54.0" layoutY="277.0" onAction="#btnBookingOnAction" text="booking">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="25.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="vehiclebtn" layoutX="52.0" layoutY="335.0" onAction="#btnVehicleOnAction" text="vehicle">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/Group.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="customerbtn" layoutX="52.0" layoutY="380.0" onAction="#btnCustomerOnAction" text="customer">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/person_pin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="employeebtn" layoutX="54.0" layoutY="433.0" onAction="#btnEmployeeManagementOnAction" text="employee">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="27.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/emoji_transportation.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="billingbtn" layoutX="58.0" layoutY="494.0" onAction="#btnBillingOnAction" text="billing">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="19.0">
+                     <image>
+                        <Image url="@../img/icon/Vector.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="settingbtn" layoutX="54.0" layoutY="558.0" onAction="#btnSettingOnAction" text="setting">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="29.0">
+                     <image>
+                        <Image url="@../img/icon/Rent%20a%20bike%20Ui%20Portfolio/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="logoutbtn" layoutX="34.0" layoutY="673.0" onAction="#btnLogOutOnAction" text="logout">
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="70.0">
+                     <image>
+                        <Image url="@../img/rent%20a%20bike/PngItem_4042710.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
