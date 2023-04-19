@@ -5,15 +5,19 @@ public class Payment {
     Double payAmount;
     String payDescription;
     String payDate;
+    String cId;
+    String bId;
 
     public Payment() {
     }
 
-    public Payment(String payId, Double payAmount, String payDescription, String payDate) {
+    public Payment(String payId, Double payAmount, String payDescription, String payDate, String cId, String bId) {
         this.payId = payId;
         this.payAmount = payAmount;
         this.payDescription = payDescription;
         this.payDate = payDate;
+        this.cId = cId;
+        this.bId = bId;
     }
 
     public String getPayId() {
@@ -48,6 +52,22 @@ public class Payment {
         this.payDate = payDate;
     }
 
+    public String getcId() {
+        return cId;
+    }
+
+    public void setcId(String cId) {
+        this.cId = cId;
+    }
+
+    public String getbId() {
+        return bId;
+    }
+
+    public void setbId(String bId) {
+        this.bId = bId;
+    }
+
     @Override
     public String toString() {
         return "Payment{" +
@@ -55,6 +75,8 @@ public class Payment {
                 ", payAmount=" + payAmount +
                 ", payDescription='" + payDescription + '\'' +
                 ", payDate='" + payDate + '\'' +
+                ", cId='" + cId + '\'' +
+                ", bId='" + bId + '\'' +
                 '}';
     }
 }

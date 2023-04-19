@@ -15,12 +15,12 @@
    <children>
       <TableView fx:id="tblPayment" layoutX="201.0" layoutY="201.0" prefHeight="512.0" prefWidth="1105.0">
          <columns>
-            <TableColumn fx:id="colPayid" prefWidth="125.0" text="payId" />
-            <TableColumn fx:id="colPayamount" prefWidth="193.0" text="payAmount" />
-            <TableColumn fx:id="colPaydescription" prefWidth="273.0" text="payDescription" />
-            <TableColumn fx:id="colPaydate" minWidth="0.0" prefWidth="181.0" text="payDate" />
-            <TableColumn fx:id="colCid" prefWidth="186.0" text="cId" />
-            <TableColumn fx:id="colBid" minWidth="0.0" prefWidth="193.0" text="bId" />
+            <TableColumn fx:id="colPayid" prefWidth="125.0" text="payment Id" />
+            <TableColumn fx:id="colPayamount" prefWidth="193.0" text="payment Amount" />
+            <TableColumn fx:id="colPaydescription" prefWidth="273.0" text="payment Description" />
+            <TableColumn fx:id="colPaydate" minWidth="0.0" prefWidth="181.0" text="payment Date" />
+            <TableColumn fx:id="colCid" prefWidth="186.0" text="customer Id" />
+            <TableColumn fx:id="colBid" minWidth="0.0" prefWidth="146.0" text="booking Id" />
          </columns>
       </TableView>
       <Text layoutX="200.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payments Management">

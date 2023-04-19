@@ -4,14 +4,20 @@ import lk.ijse.rentabike.db.DBConnection;
 import lk.ijse.rentabike.dto.Booking;
 import lk.ijse.rentabike.dto.Customer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class BookingModel {
+    private static final String URL = "jdbc:mysql://localhost:3306/rentabike";
+    private static final Properties props = new Properties();
+
+    static {
+        props.setProperty("user", "root");
+        props.setProperty("password", "1234");
+    }
+
     public static List<Booking> getAll() throws SQLException {
         Connection con = DBConnection.getInstance().getConnection();
         String sql = "SELECT * FROM Booking";
@@ -66,5 +72,18 @@ public class BookingModel {
             );
         }
         return null;
+    }
+
+    public static boolean validateBookingId(String attendenceId) {
+        try (Connection con = DriverManager.getConnection(URL, props)) {
+            String query = "SELECT * FROM Attendance WHERE attendenceId = ?";
+            PreparedStatement pstm = con.prepareStatement(query);
+            pstm.setString(1, attendenceId);
+            ResultSet rs = pstm.executeQuery();
+            return !rs.next();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 }

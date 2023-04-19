@@ -3,17 +3,24 @@ package lk.ijse.rentabike.dto;
 public class Salary {
     private String salaryId;
     private String description;
-    private double amount;
+    private Double amount;
     private String type;
+    private String month;
+    private String employeeId;
 
     public Salary() {
     }
 
-    public Salary(String salaryId, String description, double amount, String type) {
+    public Salary(String salaryId, String description, Double amount, String type, String month, String employeeId) {
         this.salaryId = salaryId;
         this.description = description;
         this.amount = amount;
         this.type = type;
+        this.month = month;
+        this.employeeId = employeeId;
+    }
+
+    public Salary(String salaryId, String description, double amount, String type, String employeeId) {
     }
 
     public String getSalaryId() {
@@ -32,11 +39,11 @@ public class Salary {
         this.description = description;
     }
 
-    public double getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
@@ -48,6 +55,22 @@ public class Salary {
         this.type = type;
     }
 
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
     @Override
     public String toString() {
         return "Salary{" +
@@ -55,6 +78,8 @@ public class Salary {
                 ", description='" + description + '\'' +
                 ", amount=" + amount +
                 ", type='" + type + '\'' +
+                ", month='" + month + '\'' +
+                ", employeeId='" + employeeId + '\'' +
                 '}';
     }
 }

@@ -15,18 +15,17 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TableView layoutX="89.0" layoutY="282.0" prefHeight="400.0" prefWidth="1204.0">
+      <TableView fx:id="tblVehicleManagement" layoutX="89.0" layoutY="282.0" prefHeight="400.0" prefWidth="1204.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="vehicleId" />
-            <TableColumn prefWidth="127.0" text="name" />
-            <TableColumn prefWidth="107.0" text="type" />
-            <TableColumn minWidth="0.0" prefWidth="149.0" text="rent price" />
-            <TableColumn prefWidth="128.0" text="mileage" />
-            <TableColumn minWidth="0.0" prefWidth="128.0" text="first_aid_kit" />
-            <TableColumn prefWidth="141.0" text="transmission" />
-            <TableColumn prefWidth="141.0" text="roadside_assistance" />
-            <TableColumn prefWidth="117.0" text="available" />
-            <TableColumn prefWidth="90.0" text="Zip Code" />
+            <TableColumn fx:id="colVehicleId" prefWidth="118.0" text="vehicleId" />
+            <TableColumn fx:id="colVehicleName" prefWidth="153.0" text="name" />
+            <TableColumn fx:id="colType" prefWidth="122.0" text="type" />
+            <TableColumn fx:id="colRentPrice" minWidth="0.0" prefWidth="138.0" text="rent price" />
+            <TableColumn fx:id="colMileage" prefWidth="129.0" text="mileage" />
+            <TableColumn fx:id="colFirstAidKit" minWidth="0.0" prefWidth="145.0" text="first_aid_kit" />
+            <TableColumn fx:id="colTransmission" prefWidth="138.0" text="transmission" />
+            <TableColumn fx:id="colRoadsideAssistance" prefWidth="125.0" text="roadside_assistance" />
+            <TableColumn fx:id="colAvailable" prefWidth="135.0" text="available" />
          </columns>
       </TableView>
       <TextField layoutX="954.0" layoutY="189.0" prefHeight="38.0" prefWidth="174.0" />

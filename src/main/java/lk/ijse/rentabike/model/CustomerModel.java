@@ -148,4 +148,17 @@ public class CustomerModel {
         }
     }
 
+    public static boolean validateCustomerId(String customerId) {
+        try (Connection con = DriverManager.getConnection(URL, props)) {
+            String query = "SELECT * FROM Customer WHERE customerId = ?";
+            PreparedStatement pstm = con.prepareStatement(query);
+            pstm.setString(1, customerId);
+            ResultSet rs = pstm.executeQuery();
+            return !rs.next();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
 }

@@ -15,26 +15,26 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="110.0" layoutY="208.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter vehicle id" />
-      <TextField layoutX="514.0" layoutY="209.0" prefHeight="28.0" prefWidth="329.0" promptText="Vehicle Name" />
-      <TextField layoutX="916.0" layoutY="207.0" prefHeight="28.0" prefWidth="329.0" promptText="Type" />
-      <TextField layoutX="112.0" layoutY="283.0" prefHeight="28.0" prefWidth="329.0" promptText="Rent" />
-      <ComboBox layoutX="513.0" layoutY="285.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
-      <ComboBox layoutX="112.0" layoutY="355.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
-      <ComboBox layoutX="111.0" layoutY="434.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
-      <ComboBox layoutX="513.0" layoutY="435.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
-      <ComboBox layoutX="917.0" layoutY="435.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
-      <Button layoutX="112.0" layoutY="594.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
+      <TextField fx:id="txtVehicleId" layoutX="110.0" layoutY="208.0" onAction="#codeSearchOnAction" prefHeight="28.0" prefWidth="329.0" promptText="Enter vehicle id" />
+      <TextField fx:id="txtVehicleName" layoutX="514.0" layoutY="209.0" prefHeight="28.0" prefWidth="329.0" promptText="Vehicle Name" />
+      <TextField fx:id="txtVehicleType" layoutX="916.0" layoutY="207.0" prefHeight="28.0" prefWidth="329.0" promptText="Type" />
+      <TextField fx:id="txtRent" layoutX="112.0" layoutY="283.0" prefHeight="28.0" prefWidth="329.0" promptText="Rent" />
+      <ComboBox fx:id="cmbFirstAidKit" layoutX="112.0" layoutY="358.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
+      <ComboBox fx:id="cmbMilage" layoutX="513.0" layoutY="285.0" prefHeight="25.0" prefWidth="329.0" promptText="Unlimited" />
+      <ComboBox fx:id="cmbTransmission" layoutX="111.0" layoutY="434.0" prefHeight="25.0" prefWidth="329.0" promptText="Automatic" />
+      <ComboBox fx:id="cmbRoadAssistance" layoutX="513.0" layoutY="435.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
+      <ComboBox fx:id="cmbAvailable" layoutX="917.0" layoutY="435.0" prefHeight="25.0" prefWidth="329.0" promptText="Yes" />
+      <Button layoutX="112.0" layoutY="594.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="308.0" layoutY="595.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
+      <Button layoutX="308.0" layoutY="595.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="500.0" layoutY="595.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
+      <Button layoutX="500.0" layoutY="595.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -59,12 +59,12 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="515.0" layoutY="262.0" text="First Aid Kit : ">
+      <Label layoutX="114.0" layoutY="335.0" text="First Aid Kit : ">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="114.0" layoutY="331.0" text="Milage : ">
+      <Label layoutX="515.0" layoutY="261.0" text="Milage : ">
          <font>
             <Font size="14.0" />
          </font>

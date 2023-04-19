@@ -64,19 +64,23 @@ public class PaymentsManagementFormController implements Initializable {
         colPayamount.setCellValueFactory(new PropertyValueFactory<>("payAmount"));
         colPaydescription.setCellValueFactory(new PropertyValueFactory<>("payDescription"));
         colPaydate.setCellValueFactory(new PropertyValueFactory<>("payDate"));
+        colCid.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+        colBid.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
     }
 
     private void getAll() {
         try {
             ObservableList<PaymentTm> obList = FXCollections.observableArrayList();
-            List<Payment> cusList = PaymentModel.getAll();
+            List<Payment> payList = PaymentModel.getAll();
 
-            for (Payment payment : cusList) {
+            for (Payment payment : payList) {
                 obList.add(new PaymentTm(
                         payment.getPayId(),
                         payment.getPayAmount(),
                         payment.getPayDescription(),
-                        payment.getPayDate()
+                        payment.getPayDate(),
+                        payment.getcId(),
+                        payment.getbId()
                 ));
             }
             tblPayment.setItems(obList);

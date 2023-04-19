@@ -14,21 +14,21 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="112.0" layoutY="229.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter Employee id" />
-      <TextField layoutX="516.0" layoutY="230.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee name" />
-      <TextField layoutX="918.0" layoutY="228.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee mobile number" />
-      <TextField layoutX="114.0" layoutY="304.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee nic" />
-      <Button layoutX="114.0" layoutY="615.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
+      <TextField fx:id="txtEmployeeId" layoutX="112.0" layoutY="229.0" onAction="#codeSearchOnAction" prefHeight="28.0" prefWidth="329.0" promptText="Enter Employee id" />
+      <TextField fx:id="txtEmployeeName" layoutX="916.0" layoutY="230.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee name" />
+      <TextField fx:id="txtNic" layoutX="112.0" layoutY="304.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee nic" />
+      <TextField fx:id="txtAddress" layoutX="514.0" layoutY="304.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee address" />
+      <Button layoutX="114.0" layoutY="615.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="310.0" layoutY="616.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
+      <Button layoutX="310.0" layoutY="616.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="502.0" layoutY="616.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
+      <Button layoutX="502.0" layoutY="616.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -38,23 +38,23 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="517.0" layoutY="205.0" text="Employee Name :">
+      <Label layoutX="917.0" layoutY="205.0" text="Employee Name :">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="920.0" layoutY="202.0" text="Mobile :">
+      <Label layoutX="114.0" layoutY="278.0" text="Nic :">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="117.0" layoutY="280.0" text="Nic :">
+      <Label layoutX="517.0" layoutY="280.0" text="Address :">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="519.0" layoutY="304.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee address" />
-      <Label layoutX="520.0" layoutY="279.0" text="Address :">
+      <TextField fx:id="txtContact" layoutX="917.0" layoutY="304.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee contact" />
+      <Label layoutX="918.0" layoutY="279.0" text="Contact :">
          <font>
             <Font size="14.0" />
          </font>
@@ -64,6 +64,12 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="114.0" layoutY="376.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee email" />
+      <TextField fx:id="txtEmail" layoutX="114.0" layoutY="376.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee email" />
+      <TextField fx:id="txtEmployeeTyped" layoutX="515.0" layoutY="229.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter Employee typed" />
+      <Label layoutX="517.0" layoutY="204.0" text="Employee Typed :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

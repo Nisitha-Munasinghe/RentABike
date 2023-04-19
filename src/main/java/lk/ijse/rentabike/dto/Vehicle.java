@@ -12,10 +12,10 @@ public class Vehicle {
     String vehicleId;
     String vehicleName;
     String type;
-    int rent;
-    boolean firstAidKit;
-    boolean milage;
-    boolean transmission;
-    boolean roadAssistance;
-    boolean available;
+    Double rent;
+    String milage;
+    String firstAidKit;
+    String transmission;
+    String roadAssistance;
+    String available;
 }

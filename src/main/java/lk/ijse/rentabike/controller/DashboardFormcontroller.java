@@ -3,13 +3,20 @@ package lk.ijse.rentabike.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.rentabike.model.ProfitAnalizingModel;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.Map;
+import java.util.ResourceBundle;
 
-public class DashboardFormcontroller {
+public class DashboardFormcontroller implements Initializable {
     public JFXButton dashboardbtn;
     public JFXButton bookingbtn;
     public JFXButton vehiclebtn;
@@ -18,6 +25,16 @@ public class DashboardFormcontroller {
     public JFXButton billingbtn;
     public JFXButton settingbtn;
     public JFXButton logoutbtn;
+    
+    public Label lblDayProfit;
+    public Label lblWeeklyProfit;
+    public Label lblMonthlyProfits;
+    public Label lblYearlyProfits;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        profitAnalysis();
+    }
 
     public void btnDashboardOnAction(ActionEvent actionEvent) throws IOException {
         Parent fxmlLoader =  FXMLLoader.load(getClass().getResource("/view/DashboardForm.fxml"));
@@ -83,6 +100,28 @@ public class DashboardFormcontroller {
     }
 
     public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/LogOutPageForm.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Log out");
+        stage.centerOnScreen();
+        stage.show();
+
+    }
+
+    public void profitAnalysis(){
+
+        Map<String, Double> profits = ProfitAnalizingModel.profitanalysis();
+        double todayProfit = profits.get("Today");
+        double thisWeekProfit = profits.get("This week");
+        double thisMonthProfit = profits.get("This month");
+        double thisYearProfit = profits.get("This year");
+
+        lblDayProfit.setText(Double.toString(todayProfit));
+        lblWeeklyProfit.setText(Double.toString(thisWeekProfit));
+        lblMonthlyProfits.setText(Double.toString(thisMonthProfit));
+        lblYearlyProfits.setText(Double.toString(thisYearProfit));
 
     }
 }

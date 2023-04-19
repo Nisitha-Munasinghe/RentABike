@@ -186,44 +186,24 @@
             <Font name="Audi Type Wide Bold" size="26.0" />
          </font>
       </Text>
-      <Text layoutX="426.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
-      <Text layoutX="447.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/day">
+      <Text layoutX="277.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="day /">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="632.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/day">
+      <Text layoutX="525.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="week /">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="609.0" layoutY="660.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
-      <Text layoutX="824.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/day">
+      <Text layoutX="788.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="month /">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="801.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Text>
-      <Text layoutX="1024.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/day">
+      <Text layoutX="1080.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="year /">
          <font>
             <Font size="16.0" />
-         </font>
-      </Text>
-      <Text layoutX="1001.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" text="k">
-         <font>
-            <Font size="32.0" />
          </font>
       </Text>
       <Label layoutX="393.0" layoutY="143.0" text="3">
@@ -241,7 +221,7 @@
             <Font size="50.0" />
          </font>
       </Label>
-      <Label layoutX="390.0" layoutY="626.0" text="25">
+      <Label fx:id="lblDayProfit" layoutX="317.0" layoutY="626.0" text="25">
          <font>
             <Font size="32.0" />
          </font>
@@ -291,17 +271,17 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <Label layoutX="556.0" layoutY="624.0" text="155">
+      <Label fx:id="lblWeeklyProfit" layoutX="573.0" layoutY="624.0" text="155">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label layoutX="748.0" layoutY="625.0" text="750">
+      <Label fx:id="lblMonthlyProfits" layoutX="847.0" layoutY="625.0" text="750">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <Label layoutX="931.0" layoutY="624.0" text="9150">
+      <Label fx:id="lblYearlyProfits" layoutX="1126.0" layoutY="624.0" text="9150">
          <font>
             <Font size="32.0" />
          </font>

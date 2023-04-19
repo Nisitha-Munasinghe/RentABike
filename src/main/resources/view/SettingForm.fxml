@@ -14,39 +14,34 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.SettingFormController">
    <children>
+      <PasswordField fx:id="txtPassword" layoutX="598.0" layoutY="290.0" prefHeight="28.0" prefWidth="312.0" />
       <Text layoutX="190.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Management">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="189.0" layoutY="289.0" prefHeight="28.0" prefWidth="318.0" promptText="Select user id" />
-      <TextField layoutX="599.0" layoutY="290.0" prefHeight="28.0" prefWidth="312.0" promptText="Enter your user name" />
-      <Label layoutX="190.0" layoutY="264.0" text="User Id">
+      <TextField fx:id="txtUsername" layoutX="194.0" layoutY="290.0" prefHeight="28.0" prefWidth="312.0" promptText="Enter your user name" />
+      <Label layoutX="194.0" layoutY="265.0" text="User Name">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="599.0" layoutY="265.0" text="User Name">
+      <Label layoutX="598.0" layoutY="262.0" text="password">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="1001.0" layoutY="262.0" text="password">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="190.0" layoutY="385.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
+      <Button layoutX="190.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnAddOnActon" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="386.0" layoutY="386.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
+      <Button layoutX="386.0" layoutY="386.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="578.0" layoutY="386.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
+      <Button layoutX="578.0" layoutY="386.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="49.0" prefWidth="151.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
@@ -156,6 +151,5 @@
             </JFXButton>
          </children>
       </Pane>
-      <PasswordField layoutX="1001.0" layoutY="288.0" prefHeight="27.0" prefWidth="312.0" promptText="Enter your password" />
    </children>
 </AnchorPane>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -33,7 +33,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="txtAttendenceId" layoutX="83.0" layoutY="167.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter attendence id" />
+      <TextField fx:id="txtAttendenceId" layoutX="83.0" layoutY="167.0" onAction="#codeSearchOnAction" prefHeight="28.0" prefWidth="329.0" promptText="Enter attendence id" />
       <TextField fx:id="txtSignInTime" layoutX="85.0" layoutY="242.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter sign-in time" />
       <Label layoutX="85.0" layoutY="142.0" text="Attendence Id :">
          <font>
@@ -78,6 +78,6 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <JFXComboBox fx:id="cmbHoliday" layoutX="951.0" layoutY="163.0" prefHeight="28.0" prefWidth="323.0" />
+      <ComboBox fx:id="cmbHoliday" layoutX="951.0" layoutY="167.0" prefHeight="28.0" prefWidth="329.0" promptText="worked day" />
    </children>
 </AnchorPane>

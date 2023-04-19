@@ -161,7 +161,14 @@ public class CustomerManagementFormController implements Initializable {
         window.centerOnScreen();
     }
 
-    public void btnLogOutOnAction(ActionEvent actionEvent) {
+    public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/LogOutPageForm.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Log out");
+        stage.centerOnScreen();
+        stage.show();
     }
 
     public void btnEditCustomerPageOnAction(ActionEvent actionEvent) throws IOException {

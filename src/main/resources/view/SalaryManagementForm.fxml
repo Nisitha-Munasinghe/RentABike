@@ -14,10 +14,11 @@
       <TableView fx:id="tblSalary" layoutX="80.0" layoutY="399.0" prefHeight="324.0" prefWidth="1204.0">
          <columns>
             <TableColumn fx:id="colSalaryId" prefWidth="197.0" text="Salarry Id" />
-            <TableColumn fx:id="colDescription" prefWidth="351.0" text="Description" />
-            <TableColumn fx:id="colAmount" maxWidth="411.0" minWidth="-1.0" prefWidth="221.0" text="Amount" />
-            <TableColumn fx:id="colType" prefWidth="224.0" text="Type" />
-            <TableColumn fx:id="colEmployeeId" minWidth="0.0" prefWidth="210.0" text="Employee Id" />
+            <TableColumn fx:id="colDescription" prefWidth="224.0" text="Description" />
+            <TableColumn fx:id="colAmount" maxWidth="411.0" minWidth="-1.0" prefWidth="209.0" text="Amount" />
+            <TableColumn fx:id="colType" prefWidth="215.0" text="Type" />
+            <TableColumn fx:id="colMonth" minWidth="0.0" prefWidth="204.0" text="Month" />
+            <TableColumn fx:id="colEmployeeId" minWidth="0.0" prefWidth="153.0" text="Employee Id" />
          </columns>
       </TableView>
       <Text layoutX="83.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary Management">
@@ -25,13 +26,13 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <Button layoutX="86.0" layoutY="307.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
+      <Button layoutX="86.0" layoutY="307.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: black;" text="Add" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField layoutX="81.0" layoutY="176.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter salary id" />
-      <TextField layoutX="83.0" layoutY="251.0" prefHeight="28.0" prefWidth="329.0" promptText="Type of salary" />
+      <TextField fx:id="txtSalaryId" layoutX="81.0" layoutY="176.0" onAction="#codeSearchOnAction" prefHeight="28.0" prefWidth="329.0" promptText="Enter salary id" />
+      <TextField fx:id="txtType" layoutX="83.0" layoutY="251.0" prefHeight="28.0" prefWidth="329.0" promptText="Type of salary" />
       <Label layoutX="83.0" layoutY="151.0" text="Salary Id">
          <font>
             <Font size="14.0" />
@@ -47,28 +48,34 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="532.0" layoutY="251.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee id" />
-      <Label layoutX="533.0" layoutY="226.0" text="Employee Id">
+      <TextField fx:id="txtEmployeeId" layoutX="951.0" layoutY="251.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee id" />
+      <Label layoutX="952.0" layoutY="226.0" text="Employee Id">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="208.0" layoutY="309.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
+      <Button layoutX="208.0" layoutY="309.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: black;" text="Update" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField layoutX="949.0" layoutY="175.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter salary amount" />
+      <TextField fx:id="txtAmount" layoutX="949.0" layoutY="175.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter salary amount" />
       <Label layoutX="950.0" layoutY="150.0" text="Amount">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="331.0" layoutY="310.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
+      <Button layoutX="331.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: black;" text="Delete" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField layoutX="530.0" layoutY="175.0" prefHeight="28.0" prefWidth="329.0" promptText="description" />
+      <TextField fx:id="txtDescription" layoutX="530.0" layoutY="175.0" prefHeight="28.0" prefWidth="329.0" promptText="description" />
+      <TextField fx:id="txtMonth" layoutX="530.0" layoutY="250.0" prefHeight="28.0" prefWidth="329.0" promptText="Enter employee id" />
+      <Label layoutX="531.0" layoutY="225.0" text="Month">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -24,7 +24,9 @@ public class PaymentModel {
                     resultSet.getString(1),
                     resultSet.getDouble(2),
                     resultSet.getString(3),
-                    resultSet.getString(4)
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6)
             ));
         }
         return data;
@@ -54,7 +56,9 @@ public class PaymentModel {
                     resultSet.getString(1),
                     resultSet.getDouble(2),
                     resultSet.getString(3),
-                    resultSet.getString(4)
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6)
             );
         }
         return null;

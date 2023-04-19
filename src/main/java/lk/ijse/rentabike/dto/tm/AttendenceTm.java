@@ -1,10 +1,13 @@
-package lk.ijse.rentabike.dto;
+package lk.ijse.rentabike.dto.tm;
 
+import lombok.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
 
-public class Attendence {
+
+
+public class AttendenceTm {
     private String attendenceId;
     private String attendencedate;
     private String holidayOrWorkedday;
@@ -12,10 +15,10 @@ public class Attendence {
     private String attendenceSignOutTime;
     private String employeeId;
 
-    public Attendence() {
+    public AttendenceTm() {
     }
 
-    public Attendence(String attendenceId, String attendencedate, String holidayOrWorkedday, String attendenceSignInTime, String attendenceSignOutTime, String employeeId) {
+    public AttendenceTm(String attendenceId, String attendencedate, String holidayOrWorkedday, String attendenceSignInTime, String attendenceSignOutTime, String employeeId) {
         this.attendenceId = attendenceId;
         this.attendencedate = attendencedate;
         this.holidayOrWorkedday = holidayOrWorkedday;
@@ -74,7 +77,7 @@ public class Attendence {
 
     @Override
     public String toString() {
-        return "Attendence{" +
+        return "AttendenceTm{" +
                 "attendenceId='" + attendenceId + '\'' +
                 ", attendencedate='" + attendencedate + '\'' +
                 ", holidayOrWorkedday='" + holidayOrWorkedday + '\'' +

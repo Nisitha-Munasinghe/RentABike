@@ -15,6 +15,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.rentabike.model.BookingModel;
+import lk.ijse.rentabike.model.CustomerModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -120,7 +122,14 @@ public class BookingPart1FillingController implements Initializable {
         window.centerOnScreen();
     }
 
-    public void btnLogOutOnAction(ActionEvent actionEvent) {
+    public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/LogOutPageForm.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Log out");
+        stage.centerOnScreen();
+        stage.show();
     }
 
     public void btnBookingManagePageOnAction(ActionEvent actionEvent) throws IOException {
@@ -240,33 +249,92 @@ public class BookingPart1FillingController implements Initializable {
         String country = txtCountry.getText();
         String zipCode = txtZipCode.getText();
 
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rentabike", "root", "1234")) {
-            String sql = "INSERT INTO Customer (customerId, name, age, contact, email, address, city, country,zip_code)" +
-                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement pstm = con.prepareStatement(sql);
-            pstm.setString(1, customerId);
-            pstm.setString(2, fullName);
-            pstm.setInt(3, age);
-            pstm.setString(4, phoneNumber);
-            pstm.setString(5, email);
-            pstm.setString(6, address);
-            pstm.setString(7, city);
-            pstm.setString(8, country);
-            pstm.setString(9, zipCode);
 
-            int affectedRows = pstm.executeUpdate();
-            if (affectedRows > 0) {
-                new Alert(Alert.AlertType.CONFIRMATION,
-                        "Success! Customer information has been saved.")
-                        .show();
+        if (customerIdFormatValidation(customerId)) {
+            if (CustomerModel.validateCustomerId(customerId)) {
+                if (customerNameValidation(fullName)) {
+                    if (customerAgeValidation(age)) {
+                        if (customerEmailValidation(email)) {
+
+                            try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rentabike", "root", "1234")) {
+                                String sql = "INSERT INTO Customer (customerId, name, age, contact, email, address, city, country,zip_code)" +
+                                        "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                                PreparedStatement pstm = con.prepareStatement(sql);
+                                pstm.setString(1, customerId);
+                                pstm.setString(2, fullName);
+                                pstm.setInt(3, age);
+                                pstm.setString(4, phoneNumber);
+                                pstm.setString(5, email);
+                                pstm.setString(6, address);
+                                pstm.setString(7, city);
+                                pstm.setString(8, country);
+                                pstm.setString(9, zipCode);
+
+                                int affectedRows = pstm.executeUpdate();
+                                if (affectedRows > 0) {
+                                    new Alert(Alert.AlertType.CONFIRMATION, "Success! Customer information has been saved.").show();
+                                }
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                                new Alert(Alert.AlertType.ERROR, "Failed to save customer information. Please try again.").show();
+                            }
+
+                        } else {
+                            new Alert(Alert.AlertType.WARNING,"Invalid email. Must contain an @ symbol.").show();
+                        }
+                    } else {
+                        new Alert(Alert.AlertType.WARNING,"Invalid age. Must be a number between 0 and 999.").show();
+                    }
+                } else {
+                    new Alert(Alert.AlertType.WARNING,"Invalid full name. Only letters and spaces allowed.").show();
+                }
+            } else {
+                new Alert(Alert.AlertType.WARNING, "The customer ID already exists, So use different customer Id").show();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR,
-                    "Failed to save customer information. Please try again.")
-                    .show();
+        } else {
+            new Alert(Alert.AlertType.WARNING,"Invalid customer ID Format. Must be in the format c001, c002, c0011.").show();
         }
+
     }
+
+
+    public boolean customerIdFormatValidation(String customerId) {
+        if (!customerId.matches("^c\\d{3,4}$")) {
+            return false;
+        }
+        return true;
+    }
+
+
+
+    public boolean customerNameValidation(String fullName) {
+        if (!fullName.matches("^[a-zA-Z ]+$")) {
+            return false;
+        }
+        return true;
+    }
+
+
+
+    public boolean customerAgeValidation(int age) {
+        if (age < 0 || age > 999) {
+            new Alert(Alert.AlertType.CONFIRMATION,"Invalid age. Must be a number between 0 and 999.").show();
+            return false;
+        }
+        return true;
+    }
+
+
+
+
+    public boolean customerEmailValidation(String email) {
+        if (!email.matches("^\\S+@\\S+$")) {
+
+            return false;
+        }
+        return true;
+    }
+
 
     public String btnBooknowOnAction(ActionEvent actionEvent) throws IOException {
 
@@ -280,41 +348,56 @@ public class BookingPart1FillingController implements Initializable {
         String dropOffLocation = cmbDropOffLocation.getValue().toString();
         LocalDate dropOffDate = dtpkDropOffLocation.getValue();
         String dropOffTime = cmbDropOffTime.getValue().toString();
-        String cid = txtCustomerId.getText();
+        //String cid = txtCustomerId.getText();
 
-        
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rentabike", "root", "1234")) {
-            String sql = "INSERT INTO Booking(bookingId, chooseBike, PickUpLocation, pickUpDate, pickUpTime, dropOffLocation, dropOffDate, dropOffTime, cid) " +
-                    "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        if (bookingIdValidation(bookingId)) {
+            if (BookingModel.validateBookingId(bookingId)) {
 
-
-            PreparedStatement pstm = con.prepareStatement(sql);
-            //String bookingId = null;
-            pstm.setString(1, bookingId);
-            pstm.setString(2, chooseBike);
-            pstm.setString(3, pickUpLocation);
-            pstm.setDate(4, Date.valueOf(pickUpDate));
-            pstm.setString(5, pickUpTime);
-            pstm.setString(6, dropOffLocation);
-            pstm.setDate(7, Date.valueOf(dropOffDate));
-            pstm.setString(8, dropOffTime);
-            pstm.setString(9, cid);
-            //pstm.setInt(9, Integer.parseInt(cid));
+                try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/rentabike", "root", "1234")) {
+                    String sql = "INSERT INTO Booking(bookingId, chooseBike, PickUpLocation, pickUpDate, pickUpTime, dropOffLocation, dropOffDate, dropOffTime) " +
+                            "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
 
-            int affectedRows = pstm.executeUpdate();
-            if (affectedRows > 0) {
-                new Alert(Alert.AlertType.CONFIRMATION,
-                        "Booking successfully saved!")
-                        .show();
+                    PreparedStatement pstm = con.prepareStatement(sql);
+                    //String bookingId = null;
+                    pstm.setString(1, bookingId);
+                    pstm.setString(2, chooseBike);
+                    pstm.setString(3, pickUpLocation);
+                    pstm.setDate(4, Date.valueOf(pickUpDate));
+                    pstm.setString(5, pickUpTime);
+                    pstm.setString(6, dropOffLocation);
+                    pstm.setDate(7, Date.valueOf(dropOffDate));
+                    pstm.setString(8, dropOffTime);
+                    //pstm.setString(9, cid);
+                    //pstm.setInt(9, Integer.parseInt(cid));
+
+
+                    int affectedRows = pstm.executeUpdate();
+                    if (affectedRows > 0) {
+                        new Alert(Alert.AlertType.CONFIRMATION,
+                                "Booking successfully saved!")
+                                .show();
+                    }
+                } catch (SQLException ex) {
+                    // handle exception here
+                    ex.printStackTrace();
+                }
+
+            } else {
+                new Alert(Alert.AlertType.WARNING, "The booking ID already exists, So use different booking Id").show();
             }
-        } catch (SQLException ex) {
-            // handle exception here
-            ex.printStackTrace();
+        } else {
+            new Alert(Alert.AlertType.CONFIRMATION,"Invalid booking ID. Must be in the format b001, b002, b011.").show();
         }
 
-        
         return bookingId;
+    }
+
+    public boolean bookingIdValidation(String bookingId) {
+        if (!bookingId.matches("^b\\d{3,4}$")) {
+            return false;
+        }
+        return true;
     }
 
 
