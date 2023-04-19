@@ -20,6 +20,8 @@ public class VehiclePreviewFormController {
     public JFXButton settingbtn;
     public JFXButton logoutbtn;
 
+    public AnchorPane context;
+
     public void btnDashboardOnAction(ActionEvent actionEvent) throws IOException {
         Parent fxmlLoader =  FXMLLoader.load(getClass().getResource("/view/DashboardForm.fxml"));
         Stage window = (Stage)dashboardbtn.getScene().getWindow();
@@ -102,5 +104,35 @@ public class VehiclePreviewFormController {
         stage.setMaximized(true);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    public void btnBikesSelectOnAction(ActionEvent actionEvent) throws IOException {
+        context.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/BikesPreviewForm.fxml"));
+        context.getChildren().add(parent);
+    }
+
+    public void btnScooterSelectOnAction(ActionEvent actionEvent) throws IOException {
+        context.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/ScooterPreviewForm.fxml"));
+        context.getChildren().add(parent);
+    }
+
+    public void btnBicycleSelectOnAction(ActionEvent actionEvent) throws IOException {
+        context.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/BicyclePreviewForm.fxml"));
+        context.getChildren().add(parent);
+    }
+
+    public void btnCarSelectOnAction(ActionEvent actionEvent) throws IOException {
+        context.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/CarPreviewForm.fxml"));
+        context.getChildren().add(parent);
+    }
+
+    public void btnThreewheelSelectOnAction(ActionEvent actionEvent) throws IOException {
+        context.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("/view/ThreeWheelPreviewForm.fxml"));
+        context.getChildren().add(parent);
     }
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="541.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.BikesPreviewFormController">
+   <children>
+      <Pane layoutX="67.0" layoutY="61.0" prefHeight="226.0" prefWidth="199.0" style="-fx-background-radius: 20; -fx-background-color: #f0ecec;">
+         <children>
+            <ImageView fitHeight="160.0" fitWidth="283.0" layoutX="-38.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/bikes/xpulse.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="24.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hero XPluse 200 CC">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="321.0" layoutY="61.0" prefHeight="226.0" prefWidth="199.0" style="-fx-background-radius: 20; -fx-background-color: #f0ecec;">
+         <children>
+            <ImageView fitHeight="160.0" fitWidth="283.0" layoutX="-32.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/bikes/x-blade.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="39.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Honda X Blade">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="573.0" layoutY="62.0" prefHeight="226.0" prefWidth="199.0" style="-fx-background-radius: 20; -fx-background-color: #f0ecec;">
+         <children>
+            <ImageView fitHeight="160.0" fitWidth="283.0" layoutX="-37.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/bikes/7rijb0oc-Copyaa.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="47.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Honda XR 250">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="824.0" layoutY="61.0" prefHeight="226.0" prefWidth="199.0" style="-fx-background-radius: 20; -fx-background-color: #f0ecec;">
+         <children>
+            <ImageView fitHeight="160.0" fitWidth="283.0" layoutX="-35.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/bikes/7rijb0oc-Copya-1.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="20.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Honda Hornet 160 R">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

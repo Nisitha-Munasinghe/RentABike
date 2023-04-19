@@ -10,9 +10,9 @@
 
 <AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rentabike.controller.VehiclePreviewFormController">
    <children>
-      <Button layoutX="1052.0" layoutY="652.0" mnemonicParsing="false" onAction="#btnVehicleManageOnAction" prefHeight="65.0" prefWidth="235.0" style="-fx-background-color: black;" text="Vehicle Manage" textFill="WHITE">
+      <Button layoutX="1192.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnVehicleManageOnAction" prefHeight="31.0" prefWidth="142.0" style="-fx-background-color: #434343; -fx-background-radius: 30;" text="Vehicle Manage" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font size="15.0" />
          </font>
       </Button>
       <Pane layoutY="-1.0" prefHeight="787.0" prefWidth="142.0" style="-fx-background-color: #000000;">
@@ -120,5 +120,31 @@
             </JFXButton>
          </children>
       </Pane>
+      <Button layoutX="260.0" layoutY="101.0" mnemonicParsing="false" onAction="#btnBikesSelectOnAction" prefHeight="65.0" prefWidth="166.0" style="-fx-background-color: black;" text="BIKES" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="457.0" layoutY="101.0" mnemonicParsing="false" onAction="#btnScooterSelectOnAction" prefHeight="65.0" prefWidth="166.0" style="-fx-background-color: black;" text="SCOOTER" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="651.0" layoutY="101.0" mnemonicParsing="false" onAction="#btnBicycleSelectOnAction" prefHeight="65.0" prefWidth="166.0" style="-fx-background-color: black;" text="BICYCLE" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="845.0" layoutY="101.0" mnemonicParsing="false" onAction="#btnCarSelectOnAction" prefHeight="65.0" prefWidth="166.0" style="-fx-background-color: black;" text="CAR" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button layoutX="1041.0" layoutY="101.0" mnemonicParsing="false" onAction="#btnThreewheelSelectOnAction" prefHeight="65.0" prefWidth="191.0" style="-fx-background-color: black;" text="THREE WHEEL" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="context" layoutX="213.0" layoutY="201.0" prefHeight="541.0" prefWidth="1080.0" />
    </children>
 </AnchorPane>
